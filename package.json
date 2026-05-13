@@ -1,0 +1,69 @@
+{
+	"$schema": "https://www.schemastore.org/package.json",
+	"name": "@luolapeikko/standard-schema-result",
+	"version": "0.0.1",
+	"description": "Rust style result type for standard schema validation",
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.mts",
+	"exports": {
+		"import": {
+			"types": "./dist/index.d.mts",
+			"default": "./dist/index.mjs"
+		},
+		"require": {
+			"types": "./dist/index.d.cts",
+			"default": "./dist/index.cjs"
+		},
+		"default": "./dist/index.mjs"
+	},
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"prepare": "lefthook install",
+		"build": "tsdown src/index.ts --format cjs,esm --dts --clean",
+		"prepublishOnly": "npm run build",
+		"test": "echo \"Error: no test specified\"",
+		"coverage": "vitest test --run --no-isolate --reporter=dot --coverage --coverage.reporter=lcov",
+		"lint": "biome check",
+		"validate": "tsgo --noEmit --project tsconfig.test.json"
+	},
+	"repository": "github:luolapeikko/standard-schema-result",
+	"keywords": [
+		"zod",
+		"valibot",
+		"arktype",
+		"result",
+		"rust",
+		"validation",
+		"standard-schema"
+	],
+	"author": "mharj",
+	"license": "MIT",
+	"devDependencies": {
+		"@biomejs/biome": "^2.4.13",
+		"@luolapeikko/result-option": "^2.2.2",
+		"@standard-schema/spec": "^1.1.0",
+		"@standard-schema/utils": "^0.3.0",
+		"@tsconfig/node24": "^24.0.4",
+		"@types/express": "^5.0.6",
+		"@types/express-serve-static-core": "^5.1.1",
+		"@types/node": "^25.6.0",
+		"@typescript/native-preview": "7.0.0-dev.20260430.1",
+		"@vitest/coverage-v8": "^4.1.5",
+		"c8": "^11.0.0",
+		"express": "^5.2.1",
+		"lefthook": "^2.1.6",
+		"tsdown": "^0.21.10",
+		"typescript": "^6.0.3",
+		"vitest": "^4.1.5",
+		"zod": "^4.4.1"
+	},
+	"peerDependencies": {
+    "@luolapeikko/result-option": ">= 2.0.0",
+		"@standard-schema/spec": ">= 1.1.0",
+		"@standard-schema/utils": ">= 0.3.0"
+	},
+	"packageManager": "pnpm@10.33.2+sha512.a90faf6feeab71ad6c6e57f94e0fe1a12f5dcc22cd754db40ae9593eb6a3e0b6b12e3540218bb37ae083404b1f2ce6db2a4121e979829b4aff94b99f49da1cf8"
+}
