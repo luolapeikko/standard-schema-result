@@ -4,13 +4,13 @@ import {SchemaError} from '@standard-schema/utils';
 
 export class Std {
 	/**
-	 * Standard schmea validation as a result type.
+	 * {@link StandardSchemaV1} validation as a {@link IResult} type.
 	 * @example
 	 * const email = Std.Result(zod.email(), 'some@email.com'); // Ok('some@email.com')
 	 * const invalidEmail = Std.Result(zod.email(), 'not-an-email'); // Err(SchemaError)
-	 * @param schema The schema to validate against.
+	 * @param {StandardSchemaV1} schema The {@link StandardSchemaV1} to validate against.
 	 * @param data The data to validate.
-	 * @returns An IResult containing either the validated data or SchemaError error.
+	 * @returns An {@link IResult} containing either the validated data or {@link SchemaError} error.
 	 */
 	public static Result<T extends StandardSchemaV1>(schema: T, data: unknown): IResult<StandardTypedV1.InferOutput<T>, SchemaError> {
 		const res = schema['~standard'].validate(data);
@@ -23,52 +23,44 @@ export class Std {
 				]),
 			);
 		}
-		if (res.issues) {
-			return Err(new SchemaError(res.issues));
-		} else {
-			return Ok(res.value);
-		}
+		return res.issues ? Err(new SchemaError(res.issues)) : Ok(res.value);
 	}
 
 	/**
-	 * Standard schmea validation as a result type function.
+	 * {@link StandardSchemaV1} validation as a {@link IResult} type function.
 	 * @example
 	 * const validateEmail = Std.ResultFn(zod.email());
 	 * const email = validateEmail('some@email.com'); // Ok('some@email.com')
 	 * const invalidEmail = validateEmail('not-an-email'); // Err(SchemaError)
-	 * @param schema The schema to validate against.
-	 * @returns A function that takes a value and returns an IResult containing either the validated data or SchemaError error.
+	 * @param {StandardSchemaV1} schema The {@link StandardSchemaV1} to validate against.
+	 * @returns A function that takes a value and returns an {@link IResult} containing either the validated data or {@link SchemaError} error.
 	 */
 	public static ResultFn<T extends StandardSchemaV1>(schema: T): (value: unknown) => IResult<StandardTypedV1.InferOutput<T>, SchemaError> {
 		return (value: unknown) => Std.Result(schema, value);
 	}
 
 	/**
-	 * Standard schmea validation as a result type for async schemas.
+	 * {@link StandardSchemaV1} validation as a {@link IResult} type for async schemas.
 	 * @example
 	 * const email = await Std.ResultAsync(zod.email(), 'some@email.com'); // Ok('some@email.com')
 	 * const invalidEmail = await Std.ResultAsync(zod.email(), 'not-an-email'); // Err(SchemaError)
-	 * @param schema The schema to validate against.
+	 * @param {StandardSchemaV1} schema The {@link StandardSchemaV1} to validate against.
 	 * @param data The data to validate.
-	 * @returns A promise that resolves to an IResult containing either the validated data or SchemaError error.
+	 * @returns A promise that resolves to an {@link IResult} containing either the validated data or {@link SchemaError} error.
 	 */
 	public static async ResultAsync<T extends StandardSchemaV1>(schema: T, data: unknown): Promise<IResult<StandardTypedV1.InferOutput<T>, SchemaError>> {
 		const res = await schema['~standard'].validate(data);
-		if (res.issues) {
-			return Err(new SchemaError(res.issues));
-		} else {
-			return Ok(res.value);
-		}
+		return res.issues ? Err(new SchemaError(res.issues)) : Ok(res.value);
 	}
 
 	/**
-	 * Standard schmea validation as a result type function for async schemas.
+	 * {@link StandardSchemaV1} validation as a {@link IResult} type function for async schemas.
 	 * @example
 	 * const validateEmail = Std.ResultAsyncFn(zod.email());
 	 * const email = await validateEmail('some@email.com'); // Ok('some@email.com')
 	 * const invalidEmail = await validateEmail('not-an-email'); // Err(SchemaError)
-	 * @param schema The schema to validate against.
-	 * @returns A function that takes a value and returns a promise that resolves to an IResult containing either the validated data or SchemaError error.
+	 * @param {StandardSchemaV1} schema The {@link StandardSchemaV1} to validate against.
+	 * @returns A function that takes a value and returns a promise that resolves to an {@link IResult} containing either the validated data or {@link SchemaError} error.
 	 */
 	public static ResultAsyncFn<T extends StandardSchemaV1>(schema: T): (value: unknown) => Promise<IResult<StandardTypedV1.InferOutput<T>, SchemaError>> {
 		return async (value: unknown) => Std.ResultAsync(schema, value);
