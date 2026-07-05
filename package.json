@@ -21,7 +21,6 @@
 		"dist"
 	],
 	"scripts": {
-		"prepare": "lefthook install",
 		"build": "tsdown src/index.ts --format cjs,esm --dts --clean",
 		"prepublishOnly": "npm run build",
 		"test": "vitest test --run --no-isolate --coverage",
