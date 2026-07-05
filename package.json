@@ -24,8 +24,7 @@
 		"prepare": "lefthook install",
 		"build": "tsdown src/index.ts --format cjs,esm --dts --clean",
 		"prepublishOnly": "npm run build",
-		"test": "vitest test --typecheck --run --no-isolate --coverage",
-		"coverage": "vitest test --run --no-isolate --reporter=dot --coverage --coverage.reporter=lcov",
+		"test": "vitest test --run --no-isolate --coverage",
 		"lint": "biome check",
 		"validate": "tsgo --noEmit --project tsconfig.test.json"
 	},
@@ -42,28 +41,28 @@
 	"author": "mharj",
 	"license": "MIT",
 	"devDependencies": {
-		"@biomejs/biome": "^2.4.13",
-		"@luolapeikko/result-option": "^2.2.3",
+		"@biomejs/biome": "^2.5.2",
+		"@luolapeikko/result-option": "^2.3.0",
 		"@standard-schema/spec": "^1.1.0",
 		"@standard-schema/utils": "^0.3.0",
 		"@tsconfig/node24": "^24.0.4",
 		"@types/express": "^5.0.6",
 		"@types/express-serve-static-core": "^5.1.1",
-		"@types/node": "^25.9.0",
-		"@typescript/native-preview": "7.0.0-dev.20260518.1",
-		"@vitest/coverage-v8": "^4.1.5",
+		"@types/node": "^25.9.4",
+		"@typescript/native-preview": "7.0.0-dev.20260704.1",
+		"@vitest/coverage-v8": "^4.1.9",
 		"c8": "^11.0.0",
 		"express": "^5.2.1",
-		"lefthook": "^2.1.6",
-		"tsdown": "^0.22.0",
+		"tsdown": "^0.22.3",
 		"typescript": "^6.0.3",
-		"vitest": "^4.1.5",
-		"zod": "^4.4.1"
+		"vite": "^8.1.3",
+		"vitest": "^4.1.9",
+		"zod": "^4.4.3"
 	},
 	"peerDependencies": {
 		"@luolapeikko/result-option": ">= 2.0.0",
 		"@standard-schema/spec": ">= 1.1.0",
 		"@standard-schema/utils": ">= 0.3.0"
 	},
-	"packageManager": "pnpm@10.33.2+sha512.a90faf6feeab71ad6c6e57f94e0fe1a12f5dcc22cd754db40ae9593eb6a3e0b6b12e3540218bb37ae083404b1f2ce6db2a4121e979829b4aff94b99f49da1cf8"
+	"packageManager": "pnpm@10.34.3+sha512.f2c531b08829d7be7f03c90addc266615f9c5477463e4bf1d275cb263ce9ea57cf0d5599110d94649a9bb3fed9f0b5efcea74a7016b61532a24cb9ad87860c1d"
 }

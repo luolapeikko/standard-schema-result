@@ -4,7 +4,6 @@
     "rootDir": "./src",
     "outDir": "./dist",
     "sourceRoot": "./src",
-    "types": ["node"],
     "declaration": true,
     "removeComments": false,
     "inlineSources": false,
