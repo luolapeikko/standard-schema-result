@@ -18,7 +18,9 @@
     "noUnusedLocals": true,
     "strict": true,
     "erasableSyntaxOnly": true,
-    "isolatedDeclarations": true
+    "isolatedDeclarations": true,
+    "noUncheckedSideEffectImports": true,
+    "noFallthroughCasesInSwitch": true
   },
   "include": ["src"],
   "exclude": ["node_modules", "**/*.spec.ts", "dist"]
