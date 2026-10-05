@@ -40,24 +40,24 @@
 	"author": "mharj",
 	"license": "MIT",
 	"devDependencies": {
-		"@biomejs/biome": "^2.5.4",
+		"@biomejs/biome": "^2.5.15",
 		"@luolapeikko/result-option": "^2.4.0",
 		"@standard-schema/spec": "^1.1.0",
 		"@standard-schema/utils": "^0.3.0",
-		"@tsconfig/node24": "^24.0.4",
-		"@types/node": "^25.9.5",
-		"@vitest/coverage-v8": "^4.1.10",
+		"@tsconfig/node24": "^24.0.5",
+		"@types/node": "^25.9.9",
+		"@vitest/coverage-v8": "^5.0.3",
 		"c8": "^12.0.0",
-		"tsdown": "^0.22.9",
+		"tsdown": "^0.23.0",
 		"typescript": "^7.0.2",
-		"vite": "^8.1.5",
-		"vitest": "^4.1.10",
-		"zod": "^4.4.3"
+		"vite": "^8.3.2",
+		"vitest": "^5.0.3",
+		"zod": "^4.6.5"
 	},
 	"peerDependencies": {
 		"@luolapeikko/result-option": ">= 2.0.0",
 		"@standard-schema/spec": ">= 1.1.0",
 		"@standard-schema/utils": ">= 0.3.0"
 	},
-	"packageManager": "pnpm@10.34.3+sha512.f2c531b08829d7be7f03c90addc266615f9c5477463e4bf1d275cb263ce9ea57cf0d5599110d94649a9bb3fed9f0b5efcea74a7016b61532a24cb9ad87860c1d"
+	"packageManager": "pnpm@12.9.1+sha512.06b055fff5cd20dc12781de173ced3310ce0951bf2ec620211a16045d5444d5c93a663210764ef29a653a610459ba0368f0e74f84d80c54723cf95aae7bc0d6d"
 }
